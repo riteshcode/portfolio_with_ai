@@ -1,0 +1,68 @@
+.integrations-section {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.integrations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.5px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  margin-top: 3rem;
+}
+
+.integration-card {
+  background: var(--surface);
+  padding: 2rem;
+  text-align: center;
+  transition: background 0.2s, color 0.2s;
+  cursor: default;
+  color: var(--muted);
+}
+
+.integration-card:hover {
+  background: var(--card);
+  color: var(--accent);
+}
+
+.int-icon {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.int-icon img {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+  filter: brightness(0) invert(0.7);
+  transition: filter 0.2s;
+}
+
+.integration-card:hover .int-icon img {
+  filter: brightness(0) invert(1);
+}
+
+.int-icon svg {
+  width: 42px;
+  height: 42px;
+}
+
+.int-name {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text);
+  margin-bottom: 0.3rem;
+}
+
+.int-category {
+  font-size: 0.72rem;
+  color: var(--muted);
+}

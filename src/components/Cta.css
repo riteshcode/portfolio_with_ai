@@ -1,0 +1,41 @@
+.cta-section {
+  background: var(--surface);
+  text-align: center;
+  padding: 8rem 5rem;
+  border-top: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-section::before {
+  content: 'HIRE ME';
+  position: absolute;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 18vw;
+  color: rgba(var(--accent-rgb), 0.03);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+  pointer-events: none;
+  letter-spacing: 0.05em;
+}
+
+.cta-section h2 {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  margin-bottom: 1.5rem;
+}
+
+.cta-section p {
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.8;
+  max-width: 500px;
+  margin: 0 auto 3rem;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1.2rem;
+  justify-content: center;
+}

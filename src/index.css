@@ -1,0 +1,126 @@
+:root {
+  color-scheme: dark;
+
+  --bg: #0a0a08;
+  --bg-rgb: 10, 10, 8;
+  --surface: #111110;
+  --card: #18180f;
+  --border: #2a2a20;
+  --accent: #c8f050;
+  --accent-rgb: 200, 240, 80;
+  --accent-solid: #c8f050;
+  --accent2: #f0c850;
+  --text: #e8e8d8;
+  --muted: #888870;
+  --white: #f5f5ea;
+}
+
+:root[data-theme='light'] {
+  color-scheme: light;
+
+  --bg: #faf9f2;
+  --bg-rgb: 250, 249, 242;
+  --surface: #f1efe2;
+  --card: #ffffff;
+  --border: #dedac6;
+  --accent: #4d7c0f;
+  --accent-rgb: 77, 124, 15;
+  --accent-solid: #65a30d;
+  --accent2: #b8860b;
+  --text: #2b2b1f;
+  --muted: #6b6b58;
+  --white: #14140c;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Outfit', sans-serif;
+  font-weight: 300;
+  overflow-x: hidden;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+#root {
+  min-height: 100svh;
+}
+
+/* NOISE OVERLAY */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  opacity: 0.028;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* SECTION COMMONS */
+section {
+  padding: 6rem 5rem;
+}
+
+.section-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.section-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+  max-width: 100px;
+}
+
+h2 {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(2.2rem, 4vw, 3.5rem);
+  color: var(--white);
+  line-height: 1.1;
+  margin-bottom: 0.5rem;
+}
+
+h2 em {
+  color: var(--accent);
+  font-style: italic;
+}
+
+/* ANIMATIONS */
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 900px) {
+  section {
+    padding: 4rem 2rem;
+  }
+}

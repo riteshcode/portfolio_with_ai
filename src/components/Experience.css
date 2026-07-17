@@ -1,0 +1,160 @@
+.experience-section {
+  background: var(--bg);
+}
+
+.exp-header {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 5rem;
+  margin-bottom: 4rem;
+}
+
+.exp-header p {
+  color: var(--muted);
+  line-height: 1.8;
+  font-size: 0.95rem;
+  margin-top: 1.5rem;
+  align-self: end;
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.exp-card {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 0;
+  border-top: 1px solid var(--border);
+  padding: 3rem 0;
+  position: relative;
+  transition: background 0.3s;
+}
+
+.exp-card:last-child {
+  border-bottom: 1px solid var(--border);
+}
+
+.exp-card::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--accent);
+  transition: width 0.5s ease;
+}
+
+.exp-card:hover::before {
+  width: 100%;
+}
+
+.exp-meta {
+  padding-right: 3rem;
+}
+
+.exp-period {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.exp-company {
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.exp-role {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.5rem;
+  color: var(--white);
+  margin-bottom: 0.4rem;
+}
+
+.exp-location {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  text-transform: uppercase;
+  margin-bottom: 1.2rem;
+}
+
+.exp-desc {
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.75;
+  margin-bottom: 1.5rem;
+  max-width: 600px;
+}
+
+.exp-projects {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.project-item {
+  padding: 1.2rem 1.5rem;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  transition: all 0.2s;
+}
+
+.project-item:hover {
+  border-color: rgba(var(--accent-rgb), 0.3);
+  background: var(--card);
+}
+
+.project-name {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+}
+
+.project-desc {
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.project-link {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.68rem;
+  color: var(--muted);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.6rem;
+  transition: color 0.2s;
+}
+
+.project-link:hover {
+  color: var(--accent);
+}
+
+@media (max-width: 900px) {
+  .exp-header {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .exp-card {
+    grid-template-columns: 1fr;
+  }
+
+  .exp-meta {
+    margin-bottom: 1rem;
+  }
+}

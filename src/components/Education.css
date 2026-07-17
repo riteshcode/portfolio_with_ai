@@ -1,0 +1,49 @@
+.education-section {
+  background: var(--bg);
+}
+
+.edu-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  margin-top: 3rem;
+}
+
+.edu-card {
+  background: var(--surface);
+  padding: 2.5rem 2rem;
+  transition: background 0.2s;
+}
+
+.edu-card:hover {
+  background: var(--card);
+}
+
+.edu-degree {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.2rem;
+  color: var(--white);
+  margin-bottom: 0.5rem;
+}
+
+.edu-inst {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.edu-year {
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+
+@media (max-width: 900px) {
+  .edu-grid {
+    grid-template-columns: 1fr;
+  }
+}
